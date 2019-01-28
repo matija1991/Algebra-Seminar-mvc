@@ -1,0 +1,103 @@
+﻿@model IEnumerable<WebApplication16.Models.Predbiljezbe>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Predbilježbe</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+
+C# programer      - 15 slobodnih mjesta, trenutno predbiljezenih: @Model.Count(c => c.Seminari.Naziv == "C# programer")
+</br>
+</br>
+Android programer - 20 slobodnih mjesta, trenutno predbiljezenih: @Model.Count(c => c.Seminari.Naziv == "Android programer")
+</br>
+</br>
+iOS programer     - 10 slobodnih mjesta, trenutno predbiljezenih: @Model.Count(c => c.Seminari.Naziv == "iOS programer")
+</br>
+</br>
+</br>
+</br>
+Dodatni seminari:
+</br>
+Web dizajn        - 25 slobodnih mjesta, trenutno predbiljezenih: @Model.Count(c => c.Seminari.Naziv == "Web dizajn")
+</br>
+</br>
+Sistem admin      - 30 slobodnih mjesta, trenutno predbiljezenih: @Model.Count(c => c.Seminari.Naziv == "Sistem admin")
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prihvaceno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Odbijeno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seminari.Naziv)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prihvaceno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Odbijeno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seminari.Naziv)
+            </td>
+            <td>
+                @Html.ActionLink("Uredi", "Edit", new { id = item.IdPredbiljezba }) |
+                @Html.ActionLink("Detalji", "Details", new { id = item.IdPredbiljezba }) |
+                @Html.ActionLink("Izbriši", "Delete", new { id = item.IdPredbiljezba })
+            </td>
+        </tr>
+
+    }
+
+</table>

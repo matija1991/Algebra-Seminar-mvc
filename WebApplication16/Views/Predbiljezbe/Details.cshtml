@@ -1,0 +1,82 @@
+﻿@model WebApplication16.Models.Predbiljezbe
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Predbiljezbe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prihvaceno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prihvaceno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Odbijeno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Odbijeno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seminari.Naziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seminari.Naziv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPredbiljezba }) |
+    @Html.ActionLink("Natrag", "Index")
+</p>
