@@ -1,0 +1,47 @@
+- Aplikacija je kreirana na Frameworku 4.5.2
+
+- Iskorištena je MVC defaultna aplikacija koja se generira u Visual studiu te je preradena prema potrebama 
+
+- Baza podataka je kreirana u Microsoft SQL Server Management Studiu 
+
+- Za modele i CRUD operacije je korišten Entity Framework, database first
+
+- Baza podataka za login se nalazi u App_data datoteki
+
+Log in: user: matija_1991@hotmail.com
+	pass: matija1991
+
+-------------------------------------------------------------------
+Query za izradu baze:
+
+CREATE DATABASE Seminar
+GO
+
+USE Seminar
+GO
+
+CREATE TABLE Seminari(
+
+IdSeminar INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+
+Naziv	  NVARCHAR(50)  NOT NULL,
+Opis	  NVARCHAR(100)	NOT NULL,
+Datum	  NVARCHAR(10)	NOT NULL,
+Popunjen  BIT		NOT NULL
+)
+GO
+
+CREATE TABLE Predbiljezbe(
+
+IdPredbiljezba INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+IdSeminar      INT FOREIGN KEY REFERENCES Seminari(IdSeminar),
+
+Ime		NVARCHAR(25)  	NOT NULL,
+Prezime		NVARCHAR(25)	NOT NULL,
+Adresa		NVARCHAR(50)	NOT NULL,
+Email		NVARCHAR(50)	NOT NULL,
+Telefon		NVARCHAR(25)	NOT NULL,
+Prihvaceno	BIT		NOT NULL,
+Odbijeno	BIT		NOT NULL,		
+)
+GO
